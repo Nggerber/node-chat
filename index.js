@@ -15,6 +15,7 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + "/views/index.html")
 });
 
+//establish the sockets connection
 io.on('connection', function (socket) {
     console.log("client conected")
     socket.on("cool", function (data) {
@@ -22,30 +23,14 @@ io.on('connection', function (socket) {
 
     })
 
-socket.on("chat_message", function(data){
-    console.log("user message", data)
-    socket.broadcast.emit("new-message", data);
-    socket.emit("new-message", data);
-})
+    // log the message from the front end
+    socket.on("chat_message", function (data) {
+        console.log("user message", data)
 
-    // setInterval(function(){
-    //     socket.emit("Greeting", "Hello")
-
-
-
-    // },2000)
-    // socket.on('username', function (username) {
-    //     socket.username = username;
-    //     io.emit('is_online', '🔵 <i>' + socket.username + ' join the chat..</i>');
-    // })
-
-    // socket.on('disconnect', function(username){
-    //     io.emit('is_online', '🔴 <i>' + socket.username + ' left the chat..</i>');
-    // })
-
-    // socket.on('chat_message', function(message) {
-    //     io.emit('chat_message', '<strong>' + socket.username + '</strong>: ' + message);
-    // });
+        // takes the logged messages from the backed and sends them to the front end
+        socket.broadcast.emit("new-message", data);
+        socket.emit("new-message", data);
+    })
 
 })
 
