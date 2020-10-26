@@ -21,6 +21,19 @@ io.on('connection', function (socket) {
         console.log(data)
 
     })
+
+socket.on("chat_message", function(data){
+    console.log("user message", data)
+    socket.broadcast.emit("new-message", data);
+    socket.emit("new-message", data);
+})
+
+    // setInterval(function(){
+    //     socket.emit("Greeting", "Hello")
+
+
+
+    // },2000)
     // socket.on('username', function (username) {
     //     socket.username = username;
     //     io.emit('is_online', '🔵 <i>' + socket.username + ' join the chat..</i>');
