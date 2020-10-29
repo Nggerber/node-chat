@@ -1,8 +1,56 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font: 13px Helvetica, Arial; }
-form { background: #fff; padding: 3px; position: fixed; bottom: 0; width: 100%; border-color: #000; border-top-style: solid; border-top-width: 1px;}
-form input { border-style: solid; border-width: 1px; padding: 10px; width: 85%; margin-right: .5%; }
-form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; margin-left: 2%; }
-#messages { list-style-type: none; margin: 0; padding: 0; }
-#messages li { padding: 5px 10px; }
-#messages li:nth-child(odd) { background: #eee; }
+.body {
+background-color: black;
+
+}
+
+
+
+.messages {
+
+    margin-top: 20px;
+    overflow: auto;
+    flex-basis: 71%;
+    margin: 10px;
+    margin-bottom: 0;
+    height: 500px;
+    width: 33%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: flex-start;
+    flex-wrap: nowrap;
+    padding: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 1);
+    background-color:lightseagreen;
+    border-radius: 25px;
+
+}
+
+.input-messages {
+
+margin-top: 10px;
+margin-left: 10px;
+
+}
+
+.chat-bubble {
+background-color: lime;
+padding: 10px;
+font-size: medium;
+border-radius: 25px;
+
+
+
+}
+
+.input-messages {
+width: 28% ;
+border-radius: 25px;
+}
+
+.chat-button {
+width: 5%;
+margin-left: 15px;
+border-radius: 25px;
+
+
+}
